@@ -3,7 +3,7 @@ RUN apk add --no-cache git
 RUN apk add --no-cache openssh
 WORKDIR /tmp
 RUN git clone https://github.com/iunnlu/estore-core.git
-COPY ./estore-core ./
+COPY /tmp/estore-core ./
 RUN ls
 
 FROM adoptopenjdk/maven-openjdk11 as maven-builder
