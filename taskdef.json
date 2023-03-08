@@ -1,5 +1,5 @@
 {
-  "taskDefinitionArn": "arn:aws:ecs:eu-central-1:139878221908:task-definition/estore-orders-service-task:8",
+  "taskDefinitionArn": "arn:aws:ecs:eu-central-1:139878221908:task-definition/estore-orders-service-task:11",
   "containerDefinitions": [
     {
       "name": "orders-service-container",
@@ -29,7 +29,7 @@
   "family": "estore-orders-service-task",
   "executionRoleArn": "arn:aws:iam::139878221908:role/ecsTaskExecutionRole",
   "networkMode": "bridge",
-  "revision": 8,
+  "revision": 11,
   "volumes": [],
   "status": "ACTIVE",
   "requiresAttributes": [
