@@ -1,0 +1,59 @@
+{
+  "taskDefinitionArn": "arn:aws:ecs:eu-central-1:139878221908:task-definition/estore-orders-service-task:8",
+  "containerDefinitions": [
+    {
+      "name": "orders-service-container",
+      "image": "<IMAGE_URL>",
+      "cpu": 0,
+      "portMappings": [
+        {
+          "name": "orders-service-container-8081-tcp",
+          "containerPort": 8081,
+          "hostPort": 8080,
+          "protocol": "tcp",
+          "appProtocol": "http"
+        }
+      ],
+      "essential": true,
+      "environment": [
+        {
+          "name": "EUREKA_URL",
+          "value": "http://172.31.20.208:8080/eureka"
+        }
+      ],
+      "environmentFiles": [],
+      "mountPoints": [],
+      "volumesFrom": []
+    }
+  ],
+  "family": "estore-orders-service-task",
+  "executionRoleArn": "arn:aws:iam::139878221908:role/ecsTaskExecutionRole",
+  "networkMode": "bridge",
+  "revision": 8,
+  "volumes": [],
+  "status": "ACTIVE",
+  "requiresAttributes": [
+    {
+      "name": "com.amazonaws.ecs.capability.ecr-auth"
+    },
+    {
+      "name": "ecs.capability.execution-role-ecr-pull"
+    }
+  ],
+  "placementConstraints": [],
+  "compatibilities": [
+    "EC2"
+  ],
+  "requiresCompatibilities": [
+    "EC2"
+  ],
+  "cpu": "256",
+  "memory": "256",
+  "runtimePlatform": {
+    "cpuArchitecture": "X86_64",
+    "operatingSystemFamily": "LINUX"
+  },
+  "registeredAt": "2023-03-08T12:33:49.108Z",
+  "registeredBy": "arn:aws:iam::139878221908:root",
+  "tags": null
+}

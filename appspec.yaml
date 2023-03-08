@@ -1,0 +1,9 @@
+version: 0.1
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: <TASK_DEFINITION>
+        LoadBalancerInfo:
+          ContainerName: "orders-service-container"
+          ContainerPort: 8081

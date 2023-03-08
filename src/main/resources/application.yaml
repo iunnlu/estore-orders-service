@@ -1,7 +1,7 @@
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
   instance:
     instance-id: ${spring.application.name}:${instanceId:${random.value}}
 spring:
@@ -23,12 +23,8 @@ server:
   error:
     include-message: always
     include-binding-errors: always
-
 axon:
   eventhandling:
     processors:
       product-group:
         mode: subscribing
-logging:
-  file:
-    path: .\OrdersService
