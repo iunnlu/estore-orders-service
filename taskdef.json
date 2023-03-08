@@ -9,7 +9,7 @@
         {
           "name": "orders-service-container-8081-tcp",
           "containerPort": 8081,
-          "hostPort": 8080,
+          "hostPort": 0,
           "protocol": "tcp",
           "appProtocol": "http"
         }
