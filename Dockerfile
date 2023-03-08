@@ -12,7 +12,7 @@ RUN ls
 ENV MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128m"
 WORKDIR /tmp/estore-core
 RUN ls
-RUN mvn clean package -DskipTests=true
+RUN mvn clean install -DskipTests=true
 WORKDIR /home/ec2-user/.m2/repository/com/example
 RUN ls
 #WORKDIR /tmp
