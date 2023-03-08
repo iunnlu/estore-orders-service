@@ -8,6 +8,7 @@ RUN ls
 FROM adoptopenjdk/maven-openjdk11 as maven-builder
 WORKDIR /tmp
 COPY . ./
+COPY --from=git /tmp ./
 RUN ls
 ENV MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128m"
 RUN mvn clean package -DskipTests=true
