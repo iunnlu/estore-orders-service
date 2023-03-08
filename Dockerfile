@@ -8,16 +8,11 @@ FROM adoptopenjdk/maven-openjdk11 as maven-builder
 WORKDIR /tmp
 COPY . ./
 COPY --from=git /tmp ./
-RUN ls
 ENV MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128m"
 WORKDIR /tmp/estore-core
-RUN ls
 RUN mvn clean install -DskipTests=true
-WORKDIR /home/ec2-user/.m2/repository/com/example
-RUN ls
-#WORKDIR /tmp
-#RUN ls
-#RUN mvn clean package -DskipTests=true
+WORKDIR /tmp
+RUN mvn clean package -DskipTests=true
 
 FROM adoptopenjdk/openjdk11
 ENV JAR_FILE=target/OrdersService*.jar
