@@ -6,6 +6,7 @@ RUN git clone https://github.com/iunnlu/estore-core.git
 RUN ls
 
 FROM adoptopenjdk/maven-openjdk11 as maven-builder
+WORKDIR /tmp
 COPY . ./
 RUN ls
 ENV MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128m"
