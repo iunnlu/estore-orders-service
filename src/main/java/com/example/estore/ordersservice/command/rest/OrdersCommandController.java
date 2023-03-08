@@ -4,10 +4,7 @@ import com.example.estore.ordersservice.command.CreateOrderCommand;
 import com.example.estore.ordersservice.core.enums.OrderStatus;
 import lombok.RequiredArgsConstructor;
 import org.axonframework.commandhandling.gateway.CommandGateway;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
@@ -16,6 +13,11 @@ import java.util.UUID;
 @RequestMapping("/orders")
 public class OrdersCommandController {
     private final CommandGateway commandGateway;
+
+    @GetMapping
+    public String test() {
+        return "TEST";
+    }
 
     @PostMapping()
     public String createOrder(@RequestBody CreateOrderRestModel createOrderRestModel) {

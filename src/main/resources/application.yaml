@@ -19,7 +19,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 server:
-  port: 0
+  port: 8081
   error:
     include-message: always
     include-binding-errors: always

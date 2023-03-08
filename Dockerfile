@@ -19,6 +19,6 @@ ENV JAR_FILE=target/OrdersService*.jar
 COPY --from=maven-builder /tmp/$JAR_FILE /opt/app/
 RUN mv /opt/app/OrdersService-*.jar /opt/app/app.jar
 WORKDIR /opt/app
-ENV PORT 0
-EXPOSE 0
+ENV PORT 8081
+EXPOSE 8081
 ENTRYPOINT ["java","-jar","app.jar"]
