@@ -6,7 +6,7 @@ eureka:
     instance-id: ${spring.application.name}:${instanceId:${random.value}}
 spring:
   datasource:
-    url: jdbc:postgresql://3.64.178.33:8080/orders
+    url: jdbc:postgresql://${POSTGRE_URL:3.64.178.33:8080}/orders
     username: postgres
     password: user
     driver-class-name: org.postgresql.Driver
@@ -28,3 +28,5 @@ axon:
     processors:
       product-group:
         mode: subscribing
+  axonserver:
+    servers: ${AXON_URL:localhost:8124}
